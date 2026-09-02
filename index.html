@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fishing Landing | Pescando os Pescados</title>
+  <meta name="description" content="Embarque no mundo da pesca esportiva. Expedições guiadas, melhores pesqueiros e preservação aquática. Uma vez aqui, não existe volta!">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation Header (Faithful to print) -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#inicio" class="navbar-brand" aria-label="Fishing Landing Home">
+        <span class="brand-star">★</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#pesqueiros" class="nav-link">Regiões</a></li>
+          <li><a href="#equipamentos" class="nav-link">Equipamentos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#pesqueiros" class="btn-cta">
+          <span>Explorar Regiões</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="inicio">
+    <!-- Asynchronous Media Background Container -->
+    <div class="media-background-container">
+      <!-- Base image loaded immediately -->
+      <img src="assets/Fundo.png" alt="Pescador ao Pôr do Sol" class="bg-image" id="heroBgImage">
+      <!-- Async Video Overlay: opacity fades to 1 when ready -->
+      <video class="async-video" id="heroVideo" muted loop playsinline preload="auto">
+        <source src="assets/pescador.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge-tag">
+          <span class="badge-dot"></span>
+          <span>Expedição Selvagem 2026</span>
+        </div>
+
+        <!-- Main Title in custom font Hunting Fishing.ttf matching reference image -->
+        <h1 class="hero-title">Pescando os<br>pescados</h1>
+
+        <!-- Subtitle matching reference image text -->
+        <p class="hero-description">
+          Embarque no mundo da pesca. Uma vez aqui, não existe volta!
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#pesqueiros" class="btn-primary">
+            <span>Explorar Expedições</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#sobre" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <span>Ver Táticas de Pesca</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#sobre" class="scroll-indicator" aria-label="Rolar para baixo">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Rolar</span>
+    </a>
+  </section>
+
+  <!-- Middle Section: Explanatory Texts & Pesqueiros -->
+  <section class="info-section" id="sobre">
+
+    <!-- Oval Curve Divider matching print top center shape -->
+    <div class="oval-divider-wrapper">
+      <div class="oval-shape">
+        <span class="oval-text">EXPEDIÇÕES & TÁTICAS DE PESCA ESPORTIVA</span>
+      </div>
+    </div>
+
+    <!-- Background image for section 2: fundo-preto-branco.png -->
+    <div class="info-bg-container">
+      <img src="assets/fundo-preto-branco.png" alt="Textura aquática fundo pesca" class="info-bg-image">
+    </div>
+    <div class="info-overlay"></div>
+
+    <div class="info-container" id="pesqueiros">
+
+      <!-- Print-Faithful Dual Box Layout -->
+      <div class="pesqueiros-grid">
+        
+        <!-- Left Box: Pesqueiros title + interactive tab list -->
+        <div class="pesqueiros-left-box">
+          <div>
+            <h2 class="pesqueiros-title">PESQUEIROS:</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Selecione uma região geográfica para visualizar detalhes:</p>
+          </div>
+
+          <ul class="tab-list">
+            <li class="tab-item active" data-tab="rio-negro">
+              <span>Rio Negro (AM)</span>
+              <span class="tab-icon">➔</span>
+            </li>
+            <li class="tab-item" data-tab="pantanal">
+              <span>Pantanal (MT/MS)</span>
+              <span class="tab-icon">➔</span>
+            </li>
+            <li class="tab-item" data-tab="serra-mesa">
+              <span>Serra da Mesa (GO)</span>
+              <span class="tab-icon">➔</span>
+            </li>
+            <li class="tab-item" data-tab="rio-xingu">
+              <span>Rio Xingu (PA)</span>
+              <span class="tab-icon">➔</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Box: Rich structured information per region -->
+        <div class="pesqueiros-right-box">
+          
+          <!-- Pane 1: Rio Negro -->
+          <div class="tab-pane active" id="rio-negro">
+            <div class="text-content-wrapper">
+              <div class="region-header">
+                <span class="region-badge">Amazônia Profunda • Barcelos & Santa Isabel</span>
+                <h3 class="region-title">Bacia do Rio Negro (AM)</h3>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🏞️</span> Relevo & Hidrografia</h4>
+                <p>Águas escuras e ácidas ricas em tanino, caracterizadas por igapós (florestas inundadas), reentrâncias de lagos de terra firme e extensas praias de areia branca. As oscilações do nível da água (cheia e seca) definem as estruturas onde os grandes predadores se concentram.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🐟</span> Espécies Principais & Hábitos</h4>
+                <p><strong>Tucunaré-Açu (Cichla temensis):</strong> O rei absoluto da bacia, podendo ultrapassar 12kg. Territorialista e agressivo, caça em troncos e bicos de ilhas. Também habitam o local o <em>Tucunaré-Borboleta</em>, <em>Aruanã-Prateada</em> e grandiosos peixes de couro como <em>Piraíba</em> e <em>Jaú</em> nos poços profundos.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🎣</span> Táticas & Equipamentos Recomendados</h4>
+                <p>Iscas de superfície de grande porte (Hélices tipo Rip Roller e Poppers de 14cm a 17cm) para fustigar ataques explosivos. Varas de ação rápida de 25lb a 30lb com linhas multifilamento de 65lb a 80lb e líder de fluorcarbono espesso de 60lb.</p>
+              </div>
+
+              <div class="info-block highlight-block">
+                <h4 class="info-subtitle"><span class="info-icon">💡</span> Dica de Ouro da Expedição</h4>
+                <p>Trabalhe as iscas de hélice com puxadas ritmadas e fortes para provocar o peixe pelo barulho e turbulência. Na fisgada, mantenha a vara erguida sem dar folga para impedir que o Açu corra para o emaranhado das galhadas submersas.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 2: Pantanal -->
+          <div class="tab-pane" id="pantanal">
+            <div class="text-content-wrapper">
+              <div class="region-header">
+                <span class="region-badge">Maior Planície Alagável • MT / MS</span>
+                <h3 class="region-title">Pantanal Mato-Grossense</h3>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🏞️</span> Relevo & Hidrografia</h4>
+                <p>Planície de inundação com rios de águas claras e correntadas vigorosas (Rios Cuiabá, Paraguay, Miranda e Piquiri). Terreno de relevo suave com vegetação ciliar densa, baías, vazantes e corredeiras com fundo de pedras e cascalho.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🐟</span> Espécies Principais & Hábitos</h4>
+                <p><strong>Dourado (Salminus brasiliensis):</strong> O "Rei do Rio", famoso pela coloração dourada intensa e saltos acrobáticos surpreendentes ao ser fisgado. Caça nas cabeceiras de corredeiras. Outras espécies de destaque: <em>Pintado (Surubim)</em>, <em>Cachara</em>, <em>Pacu</em> e <em>Tambaqui</em>.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🎣</span> Táticas & Equipamentos Recomendados</h4>
+                <p>Pesca de arremesso com iscas de meia-água barbela longa (10cm a 14cm), plugs de superfície e Fly Fishing com streamers pesados. Equipamento: varas de 17lb a 25lb de ação média-rápida, empates de aço flexível (20lb a 30lb) indispensáveis devido aos dentes afiados do Dourado.</p>
+              </div>
+
+              <div class="info-block highlight-block">
+                <h4 class="info-subtitle"><span class="info-icon">💡</span> Dica de Ouro da Expedição</h4>
+                <p>Arremesse logo acima das pedras ou galhadas na correnteza e recolha com velocidade assim que a isca entrar no canal de força do rio, local exato onde o Dourado aguarda as presas em emboscada.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 3: Serra da Mesa -->
+          <div class="tab-pane" id="serra-mesa">
+            <div class="text-content-wrapper">
+              <div class="region-header">
+                <span class="region-badge">Planalto Central • Goiás</span>
+                <h3 class="region-title">Reservatório de Serra da Mesa (GO)</h3>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🏞️</span> Relevo & Hidrografia</h4>
+                <p>Um dos maiores reservatórios de água límpida e azulada do Brasil, cercado por morros do cerrado e milhares de paliteiros (árvores submersas). Apresenta ótima visibilidade aquática, ideal para a pesca técnica com leitura visual e eletrônica.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🐟</span> Espécies Principais & Hábitos</h4>
+                <p><strong>Tucunaré-Azul (Cichla piquiti):</strong> Reconhecido pelas cores vivas azul-esverdeadas e comportamento extremamente brigador. Habita estruturas de troncos secos, bicos de grotas e fendas de pedras em águas de média e grande profundidade.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🎣</span> Táticas & Equipamentos Recomendados</h4>
+                <p>Iscas de superfície estilo Stick e Zara, poppers de som sutil e Jigs de Bucktail (12g a 17g) para trabalhar na meia-água e no fundo. Varas de 14lb a 20lb de ação média com molinete ou carretilha leve para arremessos precisos.</p>
+              </div>
+
+              <div class="info-block highlight-block">
+                <h4 class="info-subtitle"><span class="info-icon">💡</span> Dica de Ouro da Expedição</h4>
+                <p>A transparência da água exige uso de líder longo de fluorcarbono (17lb a 25lb) e trabalhos sutis. Ao avistar o peixe perseguindo a isca sem abocanhar, diminua o ritmo do trabalho com toques curtos de ponta de vara.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 4: Rio Xingu -->
+          <div class="tab-pane" id="rio-xingu">
+            <div class="text-content-wrapper">
+              <div class="region-header">
+                <span class="region-badge">Amazônia Oriental • Pará</span>
+                <h3 class="region-title">Bacia do Rio Xingu (PA)</h3>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🏞️</span> Relevo & Hidrografia</h4>
+                <p>Ambiente selvagem e intocado formado por grandes extensões de pedreiras, corredeiras brutais, lajedões de pedra e gargantas de água rápida. Hidrografia de alta energia e oxigenação intensa.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🐟</span> Espécies Principais & Hábitos</h4>
+                <p><strong>Payara / Peixe-Cachorra (Hydrolycus armatus):</strong> Predador voraz pré-histórico com presas inferiores impressionantes. Habita as calhas de corredeiras fortes. Também é o reino do <em>Tucunaré-Fogo</em>, <em>Bicuda</em>, <em>Corvina</em> e grande variedade de peixes de couro brutais.</p>
+              </div>
+
+              <div class="info-block">
+                <h4 class="info-subtitle"><span class="info-icon">🎣</span> Táticas & Equipamentos Recomendados</h4>
+                <p>Colheres pesadas, spinners grandes, jigs de chumbo e plugs de meia-água afundantes (Sinking) para vencer a força da água. Varas reforçadas de 25lb a 40lb, linhas multifilamento de 50lb e empates de aço rígido de 40lb.</p>
+              </div>
+
+              <div class="info-block highlight-block">
+                <h4 class="info-subtitle"><span class="info-icon">💡</span> Dica de Ouro da Expedição</h4>
+                <p>A boca da Cachorra é extremamente dura e cartilaginosa. Ao sentir a batida na corredeira, dê duas fisgadas firmes para garantir a penetração correta do anzol antes que o peixe dê o primeiro salto fora d'água.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Feature Cards (Added Design & Textual Polish) -->
+      <div class="features-header">
+        <p class="section-subtitle">Modalidades & Técnicas</p>
+        <h3 class="section-title">Domine a Arte da Pesca</h3>
+      </div>
+
+      <div class="cards-grid" id="equipamentos">
+        <div class="feature-card">
+          <div class="card-icon">🎯</div>
+          <h4 class="card-title">Pesca de Arremesso</h4>
+          <p class="card-desc">Arremessos de precisão milimétrica em galhadas e vegetação aquática com carretilhas de alta recolhimento e linhas multifilamento de 8 fios.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">🪶</div>
+          <h4 class="card-title">Fly Fishing (Pesca c/ Mosca)</h4>
+          <p class="card-desc">Sutileza e elegância no lançamento de streamers e moscas artesanais para capturas visuais em águas rasas e corredeiras de rio.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">🌿</div>
+          <h4 class="card-title">Pesque e Solte Consciente</h4>
+          <p class="card-desc">Compromisso integral com a devolução dos espécimes à água, garantindo a sustentabilidade e a preservação dos reprodutores selvagens.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">⚓</div>
+          <h4 class="card-title">Equipamentos de Elite</h4>
+          <p class="card-desc">Chassís de alumínio naval, passadores de titânio e componentes náuticos de ponta projetados para suportar a força dos predadores.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section with Async Video & Background -->
+  <footer class="footer-section" id="contato">
+    
+    <!-- Asynchronous Media Background Container -->
+    <div class="media-background-container">
+      <!-- Base image loaded immediately -->
+      <img src="assets/pexe.jpeg" alt="Peixe Voraz na Isca" class="bg-image" id="footerBgImage">
+      <!-- Async Video Overlay: opacity fades to 1 when ready -->
+      <video class="async-video" id="footerVideo" muted loop playsinline preload="auto">
+        <source src="assets/peixe.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="footer-overlay"></div>
+
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <div class="footer-col-brand">
+          <a href="#inicio" class="footer-logo">
+            <span class="brand-star">★</span> FishingLanding
+          </a>
+          <p>Sua referência definitiva em expedições de pesca esportiva, guiações técnicas e preservação dos ecossistemas aquáticos brasileiros.</p>
+        </div>
+
+        <div class="footer-right-cols">
+          <div>
+            <h4 class="footer-heading">Navegação</h4>
+            <ul class="footer-links">
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#sobre">Sobre Nós</a></li>
+              <li><a href="#pesqueiros">Regiões de Pesca</a></li>
+              <li><a href="#equipamentos">Equipamentos & Táticas</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Espécies de Elite</h4>
+            <ul class="footer-links">
+              <li><a href="#pesqueiros">Tucunaré-Açu</a></li>
+              <li><a href="#pesqueiros">Dourado do Pantanal</a></li>
+              <li><a href="#pesqueiros">Tucunaré-Azul</a></li>
+              <li><a href="#pesqueiros">Payara (Cachorra)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FishingLanding. Todos os direitos reservados. Pesca Esportiva & Preservação.</p>
+        
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+          <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
